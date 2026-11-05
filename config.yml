@@ -1,0 +1,40 @@
+listeners:
+- query_port: 25577
+  motd: 'Eaglercraft Proxy'
+  tab_list: GLOBAL_PING
+  query_enabled: false
+  proxy_protocol: false
+  forced_hosts: {}
+  ping_passthrough: false
+  prioritized_suite: ECDHE
+  bind_local_address: true
+  host: 0.0.0.0:8081
+  max_players: 1
+  tab_size: 60
+  force_default_server: true
+
+remote_ping_cache: -1
+network_compression_threshold: 256
+permissions:
+  default:
+  - bungeecord.command.server
+  - bungeecord.command.list
+admin:
+- bungeecord.command.alert
+- bungeecord.command.end
+- bungeecord.command.ip
+- bungeecord.command.reload
+
+log_pings: true
+show_max_players: 50
+prevent_proxy_connections: false
+online_mode: false
+servers:
+  main:
+    motd: 'Aternos Server'
+    address:'daidai7050.aternos.me:21495'
+    restricted: false
+timeout: 30000
+connection_throttle: 4000
+connection_throttle_limit: 3
+ip_forward: false
