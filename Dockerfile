@@ -12,6 +12,6 @@ RUN chmod +x start.sh
 # Renderのヘルスチェック干渉を無効化
 HEALTHCHECK NONE
 
-EXPOSE 8081
+EXPOSE 10000
 
 CMD ["./start.sh"]
