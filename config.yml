@@ -18,7 +18,7 @@ listeners:
 servers:
   lobby:
     motd: 'Aternos Server'
-    address: 127.0.0.1:25565
+    address: 'daidai7050.aternos.me:21495'
     restricted: false
 
 remote_ping_cache: -1
