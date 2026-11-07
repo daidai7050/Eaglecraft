@@ -32,7 +32,7 @@ online_mode: false
 servers:
   main:
     motd: 'Aternos Server'
-    address:'daidai7050.aternos.me:21495'
+    address: 'daidai7050.aternos.me:21495'
     restricted: false
 timeout: 30000
 connection_throttle: 4000
