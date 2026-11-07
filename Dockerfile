@@ -2,15 +2,11 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /proxy
 
-# BungeeCordのダウンロード
-ADD https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar BungeeCord.jar
+# BungeeCordを事前にダウンロード
+RUN curl -o BungeeCord.jar https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
 
-# 起動用スクリプトと設定ファイルのコピー
 COPY start.sh .
 RUN chmod +x start.sh
-
-# Renderのヘルスチェック干渉を無効化
-HEALTHCHECK NONE
 
 EXPOSE 10000
 
