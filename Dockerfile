@@ -2,11 +2,16 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /proxy
 
-# BungeeCordを事前にダウンロード
-RUN curl -o BungeeCord.jar https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
+# dos2unix のインストールと JAR ファイルの正常ダウンロード（-L オプション追加）
+RUN apt-get update && apt-get install -y dos2unix curl && \
+    curl -L -o BungeeCord.jar https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
 
+# スクリプトと設定の準備
 COPY start.sh .
-RUN chmod +x start.sh
+COPY config.yml .
+COPY plugins ./plugins
+
+RUN dos2unix start.sh && chmod +x start.sh
 
 EXPOSE 10000
 
