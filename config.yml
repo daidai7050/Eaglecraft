@@ -18,5 +18,5 @@ listeners:
 servers:
   lobby:
     motd: 'Aternos Server'
-    address: YOUR_ATERNOS_SERVER.aternos.me:25565
+    address: daidai7050.aternos.me:21495
     restricted: false
