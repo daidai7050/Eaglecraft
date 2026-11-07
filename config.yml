@@ -1,5 +1,5 @@
 listeners:
-- query_port: 25577
+- query_port: 0.0.0.0:8081
   motd: 'Eaglercraft Proxy'
   tab_list: GLOBAL_PING
   query_enabled: false
