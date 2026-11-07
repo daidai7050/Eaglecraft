@@ -12,29 +12,11 @@ listeners:
   max_players: 7
   tab_size: 60
   force_default_server: true
+  priorities:
+  - lobby
 
-remote_ping_cache: -1
-network_compression_threshold: 256
-permissions:
-  default:
-  - bungeecord.command.server
-  - bungeecord.command.list
-  admin:
-  - bungeecord.command.alert
-  - bungeecord.command.end
-  - bungeecord.command.ip
-  - bungeecord.command.reload
-
-log_pings: true
-show_max_players: 50
-prevent_proxy_connections: false
-online_mode: false
 servers:
-  main:
+  lobby:
     motd: 'Aternos Server'
-    address: 'daidai7050.aternos.me:21495'
+    address: YOUR_ATERNOS_SERVER.aternos.me:25565
     restricted: false
-timeout: 30000
-connection_throttle: 4000
-connection_throttle_limit: 3
-ip_forward: false
