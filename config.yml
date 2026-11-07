@@ -18,7 +18,7 @@ listeners:
 servers:
   lobby:
     motd: 'Aternos Server'
-    address: YOUR_ATERNOS_ADDRESS.aternos.me:YOUR_PORT
+    address: 127.0.0.1:25565
     restricted: false
 
 remote_ping_cache: -1
@@ -34,6 +34,7 @@ permissions:
   - bungeecord.command.reload
 
 log_pings: true
+connection_throttle: 4000
 connection_throttle_limit: 1000
 prevent_proxy_connections: false
 timeout: 30000
