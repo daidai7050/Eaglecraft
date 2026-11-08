@@ -1,0 +1,8 @@
+bind: '0.0.0.0:10000'
+server_name: 'Eaglercraft Server'
+
+enable_http_server: true
+http_server_port: 10000
+
+ratelimit:
+  enable: false
