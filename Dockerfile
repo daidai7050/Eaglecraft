@@ -1,18 +1,22 @@
-FROM eclipse-temurin:17-jre
+FROM openjdk:17-slim
 
-WORKDIR /proxy
+WORKDIR /app
 
-# dos2unix のインストールと JAR ファイルの正常ダウンロード（-L オプション追加）
-RUN apt-get update && apt-get install -y dos2unix curl && \
-    curl -L -o BungeeCord.jar https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
+# 依存ツールのインストール
+RUN apt-get update && apt-get install -y curl ca-certificates && rm -rf /var/lib/apt/lists/*
 
-# スクリプトと設定の準備
-COPY start.sh .
-COPY config.yml .
-COPY plugins ./plugins
+# EaglerXBungee推奨の BungeeCord.jar (ビルド #1893) を直接ダウンロード
+RUN curl -L -o BungeeCord.jar https://ci.md-5.net/job/BungeeCord/1893/artifact/bootstrap/target/BungeeCord.jar
 
-RUN dos2unix start.sh && chmod +x start.sh
+# 必要なフォルダの作成
+RUN mkdir -p plugins/EaglerXBungee
 
+# プラグイン・設定ファイルをコンテナ内にコピー
+COPY plugins/ plugins/
+COPY config.yml config.yml
+
+# ポートの公開 (RenderのWebサービス用)
 EXPOSE 10000
 
-CMD ["./start.sh"]
+# BungeeCordの起動
+CMD ["java", "-Xms512M", "-Xmx512M", "-jar", "BungeeCord.jar"]
