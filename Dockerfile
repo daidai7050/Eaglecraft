@@ -16,4 +16,4 @@ COPY config.yml config.yml
 
 EXPOSE 10000
 
-CMD ["java", "-Xms512M", "-Xmx512M", "-DeaglerBungee.stfu=true", "-jar", "BungeeCord.jar"]
+CMD ["java", "-Xms512M", "-Xmx512M", "-DeaglerBungee.stfu=true", "-jar", "BungeeCord.jar", "nogui"]
