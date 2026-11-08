@@ -11,4 +11,4 @@ servers:
     motd: 'Aternos Server'
     address: 'daidai7050.aternos.me:21495'
     restricted: false
-online_mode: true
+online_mode: false
