@@ -9,6 +9,6 @@ listeners:
 servers:
   lobby:
     motd: 'Aternos Server'
-    address: 'YOUR_ATERNOS.aternos.me:12345'
+    address: 'daidai7050.aternos.me:21495'
     restricted: false
 online_mode: true
